@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Student</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label><br>
+    <input type="text" name="name" value="{{ student.name }}"><br><br>
+    <label>Dance Form:</label><br>
+    <input type="text" name="dance_form" value="{{ student.dance_form }}"><br><br>
+    <label>Batch:</label><br>
+    <input type="text" name="batch" value="{{ student.batch }}"><br><br>
+    <label>phone:</label><br>
+    <input type="text" name="phone" value="{{ student.phone }}"><br><br>
+    <button type="submit">Update Student</button>
+    
+</form>
+{% endblock %}

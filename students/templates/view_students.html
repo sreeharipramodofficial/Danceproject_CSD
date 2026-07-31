@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2>Welcome, {{ user.username }}!</h2>
+
+<h1>Student List</h1>
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Dance Form</th>
+    <th>Batch</th>
+    <th>Phone</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+{% for student in students %}
+<tr>
+    <td>{{ student.name }}</td>
+    <td>{{ student.dance_form }}</td>
+    <td>{{ student.batch }}</td>
+    <td>{{ student.phone }}</td>
+    <td><a href="/edit/{{ student.id }}">Edit</a></td>
+    <td><a href="/delete/{{ student.id }}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
